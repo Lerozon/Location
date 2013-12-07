@@ -24,7 +24,7 @@ public class Location extends JavaPlugin implements Listener{
 	}
 	
 	public static String getStringFromLocation(org.bukkit.Location in){
-		return in.getWorld() + ":" + in.getX() + "," + in.getY() + "," + in.getBlockZ() + "," +
+		return in.getWorld().getName() + ":" + in.getX() + "," + in.getY() + "," + in.getBlockZ() + "," +
 			   in.getYaw() + "," + in.getPitch();
 	}
 	
