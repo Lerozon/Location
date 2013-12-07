@@ -1,0 +1,3 @@
+name: LerozonLocation
+version: 1.0
+main: net.lerozon.plugins.location.Location
