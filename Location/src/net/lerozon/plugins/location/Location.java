@@ -5,6 +5,7 @@ import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -19,7 +20,13 @@ public class Location extends JavaPlugin implements Listener{
 	@EventHandler(priority = EventPriority.LOWEST)
 	public void onPlayerInteract(PlayerInteractEvent evt){
 		if(evt.getMaterial() == Material.PAPER){
-			evt.getPlayer().sendMessage(getStringFromLocation(evt.getClickedBlock().getLocation()));
+			if(evt.getAction() == Action.RIGHT_CLICK_BLOCK || evt.getAction() == Action.RIGHT_CLICK_AIR){
+				evt.getPlayer().sendMessage("Printing location of clicked block");
+				evt.getPlayer().sendMessage(getStringFromLocation(evt.getClickedBlock().getLocation()));
+			}else{
+				evt.getPlayer().sendMessage("Printing you current location");
+				evt.getPlayer().sendMessage(getStringFromLocation(evt.getPlayer().getLocation()));
+			}
 		}
 	}
 	
