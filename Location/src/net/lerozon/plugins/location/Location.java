@@ -24,7 +24,7 @@ public class Location extends JavaPlugin implements Listener{
 				evt.getPlayer().sendMessage("Printing location of clicked block");
 				evt.getPlayer().sendMessage(getStringFromLocation(evt.getClickedBlock().getLocation()));
 			}else{
-				evt.getPlayer().sendMessage("Printing you current location");
+				evt.getPlayer().sendMessage("Printing your current location");
 				evt.getPlayer().sendMessage(getStringFromLocation(evt.getPlayer().getLocation()));
 			}
 		}
